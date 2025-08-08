@@ -1,8 +1,11 @@
 version: '3.8'
 
 services:
-  pansou:
-    image: ghcr.io/fish2018/pansou:latest
+  # image: ghcr.io/fish2018/pansou:latest
+  pansou:  #本地构建
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: pansou
     restart: unless-stopped
     ports:
@@ -47,4 +50,4 @@ volumes:
 
 networks:
   pansou-network:
-    name: pansou-network 
+    name: pansou-network
